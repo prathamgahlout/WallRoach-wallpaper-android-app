@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <PreferenceCategory android:title="Notifications">
+        <CheckBoxPreference
+            android:title="All Notifications"
+            android:summary="Get notified for newly added Premium walls."
+            android:key="@string/key_notification"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="General">
+        <Preference
+            android:title="Clear cache"
+            android:summary="Clear locally cached images."
+            android:key="@string/clear_cache"/>
+        <Preference
+            android:title="Clear App Directory"
+            android:summary="Clear the local app directory"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="About">
+        <Preference
+            android:title="Version"
+            android:summary="1.8.0"
+            android:selectable="false"/>
+        <Preference
+            android:title="Contact"
+            android:selectable="true"
+            android:key="@string/contact_developer"
+            android:summary="Email Developer"/>
+        <Preference
+            android:title="Privacy Policy"
+            android:selectable="true"
+            android:key="policy"
+            android:summary="View Privacy policy"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

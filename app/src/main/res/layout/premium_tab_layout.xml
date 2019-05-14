@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:background="@color/colorPrimaryDark">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/premium_tab_progressBar"
+        android:visibility="invisible"/>
+
+
+
+
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swipe_refresh_premium">
+
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_premium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp"
+                android:clipToPadding="false">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+</RelativeLayout>

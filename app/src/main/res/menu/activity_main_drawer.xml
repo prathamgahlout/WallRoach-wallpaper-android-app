@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="CATEGORIES">
+        <menu>
+
+            <group
+                android:id="@+id/CATEGORY_GROUP"
+                android:menuCategory="container">
+
+            <item
+                android:id="@+id/ABSTRACT"
+                android:title="ABSTRACT"
+                android:icon="@drawable/abs_48"
+                android:iconTint="#cddc39"
+                />
+                <item
+                    android:id="@+id/ANIMALS"
+                    android:title="ANIMALS"
+                    android:iconTint="#cddc39"
+                    android:icon="@drawable/bunny_48"/>
+                <item
+                    android:id="@+id/AMOLED"
+                    android:title="AMOLED"
+                    android:icon="@drawable/amoled_48"/>
+                <item
+                    android:id="@+id/BLACK"
+                    android:title="BLACK"
+                    android:icon="@drawable/black_48"/>
+                <item
+                    android:id="@+id/CARS"
+                    android:title="CARS"
+                    android:icon="@drawable/car_48"/>
+                <item
+                    android:id="@+id/CITY"
+                    android:title="CITY"
+                    android:icon="@drawable/city_48"
+                    />
+                <item
+                    android:id="@+id/MISC"
+                    android:title="MISC"
+                    android:icon="@drawable/smiley_happy_48"
+                    />
+
+            <item
+                android:id="@+id/LANDSCAPES"
+                android:title="LANDSCAPES"
+                android:icon="@drawable/scenery_48"/>
+            <item
+                android:id="@+id/MATERIAL"
+                android:title="MATERIAL"
+                android:icon="@drawable/material_48"/>
+
+            <item
+                android:id="@+id/MINIMAL"
+                android:title="MINIMAL"
+                android:icon="@drawable/nature_48"/>
+                <item
+                    android:id="@+id/MOTIVATIONAL"
+                    android:title="MOTIVATIONAL"
+                    android:icon="@drawable/motiv_48"/>
+            <item
+                android:id="@+id/SPACE"
+                android:title="SPACE"
+                android:icon="@drawable/space_48"/>
+                <item
+                    android:id="@+id/SUPERHERO"
+                    android:title="SUPERHEROES"
+                    android:icon="@drawable/super_48"/>
+
+
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="">
+
+        <menu>
+
+            <item
+                android:id="@+id/settings"
+                android:title="SETTINGS"
+                android:icon="@drawable/settings_48"/>
+
+            <item
+                android:id="@+id/rate"
+                android:title="RATE"
+                android:icon="@drawable/star_48"/>
+            <item
+                android:id="@+id/feedback"
+                android:title="HELP AND FEEDBACK"
+                android:icon="@drawable/message_48"/>
+
+            <item
+                android:id="@+id/about"
+                android:title="ABOUT"
+                android:icon="@drawable/info_48"/>
+            <item
+                android:title=""/>
+
+
+        </menu>
+    </item>
+
+</menu>

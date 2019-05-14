@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sad_smiley"
+        android:id="@+id/sad"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:id="@+id/textview1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:text="WALLPAPERS"
+        android:id="@+id/textview2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RETRY"
+        android:id="@+id/retry_button"
+        android:padding="8dp"
+        android:gravity="center"
+
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:text="or Restart the App"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:text="with a working data"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:text="connection."/>
+
+</LinearLayout>

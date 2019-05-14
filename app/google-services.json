@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "147373694084",
+    "firebase_url": "https://walle-f113c.firebaseio.com",
+    "project_id": "walle-f113c",
+    "storage_bucket": "walle-f113c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147373694084:android:12db5fc754cb0a45",
+        "android_client_info": {
+          "package_name": "com.whoops.wallroachwallpapers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147373694084-j75og2srlnp8ak21kcklb82sjaa5blqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBvhlbR8KJqePLksZfdbVIAWtVlo0RPP8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147373694084:android:2312ffdcc702d4ef",
+        "android_client_info": {
+          "package_name": "com.whoops.wallroachwallpapers.pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147373694084-j75og2srlnp8ak21kcklb82sjaa5blqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBvhlbR8KJqePLksZfdbVIAWtVlo0RPP8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

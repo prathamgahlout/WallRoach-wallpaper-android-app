@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.NoActionBar.Fullscreen" parent="AppTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:interpolator">@android:interpolator/anticipate_overshoot</item>
+        <item name="android:shareInterpolator">true</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+
+    </style>
+    <style name="prefTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+</resources>
