@@ -12,10 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.app.AlertDialog;
-import android.support.v7.view.ContextThemeWrapper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,17 +24,20 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.view.ContextThemeWrapper;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.ViewPropertyAnimation;
 import com.bumptech.glide.request.target.Target;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -156,7 +156,7 @@ public class FullScreenActivity extends Activity {
                             Toasty.info(getBaseContext(),"Please wait...",Toast.LENGTH_SHORT,true).show();
                             setHomeScreenWallpaper();
 
-                            if (interstitialAd.isLoaded()){
+                            if (interstitialAd != null){
                                 showInterstitial();
                             }
 
@@ -168,7 +168,7 @@ public class FullScreenActivity extends Activity {
                             //Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                             Toasty.info(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT,true).show();
                             setHomeScreenWallpaper();
-                            if (interstitialAd.isLoaded()){
+                            if (interstitialAd != null){
                                 showInterstitial();
                             }
 
@@ -180,7 +180,7 @@ public class FullScreenActivity extends Activity {
                             //Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                             Toasty.info(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT,true).show();
                             setLockScreenWallpaper();
-                            if (interstitialAd.isLoaded()){
+                            if (interstitialAd != null){
                                 showInterstitial();
                             }
 
@@ -192,7 +192,7 @@ public class FullScreenActivity extends Activity {
                             //Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                             Toasty.info(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT,true).show();
                             setLockScreenWallpaper();
-                            if (interstitialAd.isLoaded()){
+                            if (interstitialAd != null){
                                 showInterstitial();
                             }
 
@@ -202,7 +202,7 @@ public class FullScreenActivity extends Activity {
                         @Override
                         public void onClick(View view) {
                             downloadImage(false);
-                            if (interstitialAd.isLoaded()){
+                            if (interstitialAd != null){
                                 showInterstitial();
                             }
 
@@ -213,7 +213,7 @@ public class FullScreenActivity extends Activity {
                         @Override
                         public void onClick(View view) {
                             downloadImage(false);
-                            if (interstitialAd.isLoaded()){
+                            if (interstitialAd != null){
                                 showInterstitial();
                             }
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <android.support.v7.widget.ButtonBarLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
@@ -14,7 +14,7 @@
             android:text="SET AS WALLPAPER"
             android:layout_weight="1"
             android:background="#33000000"/>
-    </android.support.v7.widget.ButtonBarLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 

@@ -1,5 +1,6 @@
 package com.whoops.wallroachwallpapers;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -9,11 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.ContextThemeWrapper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +23,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
@@ -34,9 +36,13 @@ import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.OnPaidEventListener;
+import com.google.android.gms.ads.ResponseInfo;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -45,7 +51,7 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
-public class FullScreenPremium extends AppCompatActivity{
+public class FullScreenPremium extends AppCompatActivity {
 
     private ImageView fullimage;
     private FloatingActionButton fab_setas,fab_home,fab_lock,fab_download;
@@ -67,8 +73,8 @@ public class FullScreenPremium extends AppCompatActivity{
     }
 
     private void showInterstitial() {
-        if (interstitialAd.isLoaded()) {
-            interstitialAd.show();
+        if (interstitialAd != null) {
+            interstitialAd.show(this);
         }
     }
 
@@ -79,9 +85,53 @@ public class FullScreenPremium extends AppCompatActivity{
             /*rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
             rewardedVideoAd.setRewardedVideoAdListener(this);
             rewardedVideoAd.loadAd("ca-app-pub-6967138802491752/4217947508", new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());*/
-            interstitialAd=new InterstitialAd(this);
+
             /*interstitialAd.setAdUnitId("ca-app-pub-6967138802491752/9590416466");*/
-            interstitialAd.setAdUnitId("ca-app-pub-6967138802491752/5517921429");
+            interstitialAd = new InterstitialAd() {
+                @Nullable
+                @Override
+                public FullScreenContentCallback getFullScreenContentCallback() {
+                    return null;
+                }
+
+                @Nullable
+                @Override
+                public OnPaidEventListener getOnPaidEventListener() {
+                    return null;
+                }
+
+                @NonNull
+                @Override
+                public ResponseInfo getResponseInfo() {
+                    return null;
+                }
+
+                @NonNull
+                @Override
+                public String getAdUnitId() {
+                    return "ca-app-pub-6967138802491752/5517921429";
+                }
+
+                @Override
+                public void setFullScreenContentCallback(@Nullable FullScreenContentCallback fullScreenContentCallback) {
+
+                }
+
+                @Override
+                public void setImmersiveMode(boolean b) {
+
+                }
+
+                @Override
+                public void setOnPaidEventListener(@Nullable OnPaidEventListener onPaidEventListener) {
+
+                }
+
+                @Override
+                public void show(@NonNull Activity activity) {
+
+                }
+            };
 
 
 
@@ -144,14 +194,7 @@ public class FullScreenPremium extends AppCompatActivity{
                         public void onClick(View view) {
                              Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                              setHomeScreenWallpaper();
-                             interstitialAd.loadAd(new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());
-                            interstitialAd.setAdListener(new AdListener(){
-                                @Override
-                                public void onAdLoaded() {
-                                    showInterstitial();
-                                }
-                            });
-
+                             showInterstitial();
                         }
                     });
                     fab_lock.setOnClickListener(new View.OnClickListener() {
@@ -159,42 +202,21 @@ public class FullScreenPremium extends AppCompatActivity{
                         public void onClick(View view) {
                             Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                              setLockScreenWallpaper();
-                            interstitialAd.loadAd(new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());
-                            interstitialAd.setAdListener(new AdListener(){
-                                @Override
-                                public void onAdLoaded() {
-                                    showInterstitial();
-                                }
-                            });
-
+                            showInterstitial();
                         }
                     });
                     fab_download.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             downloadImage();
-                            interstitialAd.loadAd(new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());
-                            interstitialAd.setAdListener(new AdListener(){
-                                @Override
-                                public void onAdLoaded() {
-                                    showInterstitial();
-                                }
-                            });
-
+                            showInterstitial();
                         }
                     });
                     download.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             downloadImage();
-                            interstitialAd.loadAd(new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());
-                            interstitialAd.setAdListener(new AdListener(){
-                                @Override
-                                public void onAdLoaded() {
-                                    showInterstitial();
-                                }
-                            });
-
+                            showInterstitial();
                         }
                     });
                     setAshome.setOnClickListener(new View.OnClickListener() {
@@ -202,14 +224,7 @@ public class FullScreenPremium extends AppCompatActivity{
                         public void onClick(View view) {
                             Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                             setHomeScreenWallpaper();
-                            interstitialAd.loadAd(new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());
-                            interstitialAd.setAdListener(new AdListener(){
-                                @Override
-                                public void onAdLoaded() {
-                                    showInterstitial();
-                                }
-                            });
-
+                            showInterstitial();
                         }
                     });
                     setAslock.setOnClickListener(new View.OnClickListener() {
@@ -217,14 +232,7 @@ public class FullScreenPremium extends AppCompatActivity{
                         public void onClick(View view) {
                             Toast.makeText(getApplicationContext(),"Please wait...",Toast.LENGTH_SHORT).show();
                             setLockScreenWallpaper();
-                            interstitialAd.loadAd(new AdRequest.Builder().addTestDevice("DB5AAE762EBC25AAF350EFB16E0B804C").build());
-                            interstitialAd.setAdListener(new AdListener(){
-                                @Override
-                                public void onAdLoaded() {
-                                    showInterstitial();
-                                }
-                            });
-
+                            showInterstitial();
                         }
                     });
 

@@ -58,7 +58,7 @@
             android:textColor="@color/colorPrimaryDark"
             />
 
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:backgroundTint="#1da1f2"
@@ -71,7 +71,7 @@
                 app:elevation="0dp"
 
                 />
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:backgroundTint="#3b5998"
@@ -84,7 +84,7 @@
                 app:elevation="0dp"
 
                 />
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:backgroundTint="#dd4b39"
@@ -97,7 +97,7 @@
                 app:elevation="0dp"
 
                 />
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:backgroundTint="#f57d00"
@@ -113,7 +113,7 @@
 
 
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/shareappontwitter"
@@ -139,9 +139,9 @@
             android:textColor="@color/colorPrimary"/>
 
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/version_card"
@@ -152,7 +152,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/info"
-            android:tint="@color/colorPrimaryDark"
+            app:tint="@color/colorPrimaryDark"
             android:src="@drawable/info_48"/>
         <TextView
             android:layout_width="wrap_content"
@@ -171,8 +171,8 @@
             android:layout_marginTop="30dp"
             android:textSize="12sp"
             android:textColor="@color/colorPrimaryDark"/>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/copyright_card"
@@ -182,7 +182,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tint="@color/colorPrimaryDark"
+            app:tint="@color/colorPrimaryDark"
             android:src="@drawable/star_48"/>
         <TextView
             android:layout_width="wrap_content"
@@ -201,7 +201,7 @@
             android:layout_marginTop="30dp"
             android:textSize="12sp"
             android:textColor="@color/colorPrimaryDark"/>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 

@@ -13,35 +13,34 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.*;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -162,7 +161,12 @@ public class MainActivity extends AppCompatActivity
             //inialize mobileads
 
 
-            //MobileAds.initialize(this, "ca-app-pub-6967138802491752~1261033133");
+        new Thread(
+                () -> {
+                    // Initialize the Google Mobile Ads SDK on a background thread.
+                    MobileAds.initialize(this, initializationStatus -> {});
+                })
+                .start();
 
 
             //databaseReference= FirebaseDatabase.getInstance().getReference();
@@ -432,6 +436,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }
+        super.onBackPressed();
     }
 
     @Override
@@ -607,7 +612,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public class SectionsPageAdapter extends FragmentPagerAdapter{
+    public class SectionsPageAdapter extends FragmentPagerAdapter {
 
 
         public SectionsPageAdapter(FragmentManager fm){
@@ -661,7 +666,7 @@ public class MainActivity extends AppCompatActivity
 
         private static final String ARG_SECTION_NUMBER="section_number";
         private  Context context;
-        private  SwipeRefreshLayout swiper;
+        private SwipeRefreshLayout swiper;
         private ProgressBar progressBar;
         private Handler handler;
         private Runnable r;
@@ -704,7 +709,7 @@ public class MainActivity extends AppCompatActivity
                            //recyclerViewAdapter.notifyItemRangeChanged(0,pathrefs.size()-1);
                            Collections.shuffle(MainActivity.pathrefsthumb);
                            recyclerViewAdapter.notifyDataSetChanged();
-                           if(MainActivity.pathrefsthumb.size()!=0)Snackbar.make(rootView,"Shuffled & Updated latest wallpapers!",Snackbar.LENGTH_SHORT).setActionTextColor(Color.RED).show();
+                           if(MainActivity.pathrefsthumb.size()!=0) Snackbar.make(rootView,"Shuffled & Updated latest wallpapers!",Snackbar.LENGTH_SHORT).setActionTextColor(Color.RED).show();
 
                        }
                        swiper.setRefreshing(false);
